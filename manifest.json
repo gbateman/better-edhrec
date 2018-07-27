@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "EDHRec Extension",
+  "version": "0.1",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://edhrec.com/*", "https://edhrec.com/*"
+      ],
+      "js": ["edhrec-extension.js"]
+    }
+  ]
+}
