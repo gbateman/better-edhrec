@@ -7,7 +7,8 @@
       "matches": [
         "http://edhrec.com/*", "https://edhrec.com/*"
       ],
-      "js": ["edhrec-extension.js"]
+      "js": ["edhrec-extension.js"],
+      "css": ["edhrec-extension.css"]
     }
   ]
 }
