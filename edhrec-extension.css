@@ -1,3 +1,101 @@
-.card > a > a:hover, .card > a:hover {
+.scryfall-link:hover {
   background-color: rgba(100, 0, 100, 0.4);
 }
+
+.add-card-button {
+  cursor: pointer;
+}
+
+.add-card-button:hover {
+  background-color: rgba(63, 63, 63, 0.8);
+}
+
+.add-card-button div {
+  display: none;
+}
+
+.add-card-button:hover div {
+  display: block;
+}
+
+.decklist {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 2vw;
+  padding: 0 0 0 2vw;
+
+  z-index: 5;
+
+  color: white;
+  background-color: DimGray;
+}
+
+.decklist:hover {
+  width: 15vw;
+  padding: 6vh 1vw 1vh;
+}
+
+.decklist-cards-container {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  border-radius: 5px;
+  border: 2px solid white;
+  padding: 5px;
+}
+
+.decklist-cards-container.empty {
+  border: none;
+  padding: 0;
+}
+
+.decklist-card-wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+}
+
+.remove-card-button {
+  margin-right: 2px;
+  cursor: pointer;
+}
+
+.decklist-card {
+  overflow-x: hidden;
+  overflow-y: visible;
+  white-space: nowrap;
+}
+
+.decklist-buttons-wrapper {
+  margin-top: 5px;
+  display: flex;
+}
+
+.copy-decklist-button {
+  margin-right: 5px;
+}
+
+.decklist-button {
+  flex-grow: 1;
+  border-radius: 5px;
+  border: 2px solid white;
+  padding: 5px 0;
+  cursor: pointer;
+  text-align: center;
+  background-color: none;
+
+  -webkit-transition: background-color ease-out 1s;
+  transition: background-color ease-out 1s;
+}
+
+.decklist-button:active {
+  background-color: white;
+
+  -webkit-transition: background-color 0s;
+  transition: background-color 0s;
+}
+
