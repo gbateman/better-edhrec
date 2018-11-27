@@ -8,12 +8,6 @@ layoutSelect.style = 'margin-right: 2vw; float: right;';
 const cards = document.getElementsByClassName('card');
 
 for(let i = 0; i < cards.length; i++) {
-  const image = cards[i].getElementsByClassName('oneimage')[0] || cards[i].getElementsByClassName('frontimage')[0];
-  const link = (image.getAttribute('data-src') || image.src)
-    .replace('img.', '')
-    .replace(/s\/normal\/\w*(?=\/)/g, '')
-    .replace(/\.jpg\?\d*/g, '');
-
   let cardName = cards[i].parentElement.parentElement.getElementsByClassName('nwname')[0].innerHTML;
   if (cardName.length === 0) { // Commander
     cardName = cards[i].parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.getElementsByClassName('panel-title')[0].innerHTML
