@@ -16,22 +16,20 @@ for(let i = 0; i < cards.length; i++) {
   const anchor = document.createElement('a');
   anchor.setAttribute('href', link);
   anchor.setAttribute('class', 'scryfall-link');
-  anchor.setAttribute('style', 'position: absolute; top: 0; right: 0; bottom: 50%; left: 0; z-index: 3;');
 
-  let cardName = cards[i].parentElement.getElementsByClassName('nwname')[0].innerHTML;
+  let cardName = cards[i].parentElement.parentElement.getElementsByClassName('nwname')[0].innerHTML;
   if (cardName.length === 0) { // Commander
     cardName = cards[i].parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.getElementsByClassName('panel-title')[0].innerHTML
   }
-  const addCardButton = document.createElement('div');
+  const addCardButton = document.createElement('a');
   addCardButton.setAttribute('class', 'add-card-button');
-  addCardButton.setAttribute('style', 'position: absolute; top: 50%; transform: translateY(-50%); height: 40%; right: 0; width: 20%; z-index: 4;');
   addCardButton.setAttribute('cardName', cardName);
   const addCardButtonArrow = document.createElement('div');
   addCardButtonArrow.setAttribute('class', 'glyphicon glyphicon-chevron-right');
-  addCardButtonArrow.setAttribute('style', 'color: white; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);');
   addCardButton.appendChild(addCardButtonArrow);
-  addCardButton.addEventListener('click', function() {
+  addCardButton.addEventListener('click', function(event) {
     addCardToDecklist(addCardButton.getAttribute('cardName'));
+    event.preventDefault();
   });
 
   cards[i].appendChild(anchor);

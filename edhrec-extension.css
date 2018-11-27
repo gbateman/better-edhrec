@@ -1,50 +1,70 @@
-.scryfall-link:hover {
-  background-color: rgba(100, 0, 100, 0.4);
-}
+.scryfall-link {
+  display: none;
+  position: absolute;
+  bottom: 70%;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  z-index: 3;
 
-.add-card-button {
+  background-image: url('https://assets.scryfall.com/icon.png');
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
   cursor: pointer;
 }
 
-.add-card-button:hover {
-  background-color: rgba(63, 63, 63, 0.8);
-}
-
-.add-card-button div {
+.add-card-button {
   display: none;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 40%;
+  width: 20%;
+  transform: translateY(-50%);
+  z-index: 4;
+
+  background-color: rgba(63, 63, 63, 0.8);
+  cursor: pointer;
 }
 
-.add-card-button:hover div {
+.glyphicon.glyphicon-chevron-right {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.card:hover .scryfall-link, .card:hover .add-card-button {
   display: block;
 }
 
 .decklist {
+  background-color: DimGray;
+  bottom: 0;
+  color: white;
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 2vw;
   padding: 0 0 0 2vw;
-
-  z-index: 5;
-
-  color: white;
-  background-color: DimGray;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 2vw;
+  z-index: 10;
 }
 
 .decklist:hover {
-  width: 15vw;
   padding: 6vh 1vw 1vh;
+  width: 15vw;
 }
 
 .decklist-cards-container {
+  border: 2px solid white;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   overflow: auto;
-  border-radius: 5px;
-  border: 2px solid white;
   padding: 5px;
 }
 
@@ -54,14 +74,14 @@
 }
 
 .decklist-card-wrapper {
-  display: flex;
   align-items: center;
+  display: flex;
   min-height: 24px;
 }
 
 .remove-card-button {
-  margin-right: 2px;
   cursor: pointer;
+  margin-right: 2px;
 }
 
 .decklist-card {
@@ -71,8 +91,9 @@
 }
 
 .decklist-buttons-wrapper {
-  margin-top: 5px;
   display: flex;
+  margin-top: 5px;
+  min-height: 34px;
 }
 
 .copy-decklist-button {
@@ -80,13 +101,13 @@
 }
 
 .decklist-button {
-  flex-grow: 1;
-  border-radius: 5px;
-  border: 2px solid white;
-  padding: 5px 0;
-  cursor: pointer;
-  text-align: center;
   background-color: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-grow: 1;
+  padding: 5px 0;
+  text-align: center;
 
   -webkit-transition: background-color ease-out 1s;
   transition: background-color ease-out 1s;
