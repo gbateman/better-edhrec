@@ -13,14 +13,17 @@ for(let i = 0; i < cards.length; i++) {
     .replace('img.', '')
     .replace(/s\/normal\/\w*(?=\/)/g, '')
     .replace(/\.jpg\?\d*/g, '');
-  const anchor = document.createElement('a');
-  anchor.setAttribute('href', link);
-  anchor.setAttribute('class', 'scryfall-link');
 
   let cardName = cards[i].parentElement.parentElement.getElementsByClassName('nwname')[0].innerHTML;
   if (cardName.length === 0) { // Commander
     cardName = cards[i].parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.getElementsByClassName('panel-title')[0].innerHTML
   }
+
+  const anchor = document.createElement('a');
+  const scryfallLink = 'https://scryfall.com/search?q='+ encodeURI(cardName) + '&unique=cards&as=grid&order=name';
+  anchor.setAttribute('href', scryfallLink);
+  anchor.setAttribute('class', 'scryfall-link');
+
   const addCardButton = document.createElement('a');
   addCardButton.setAttribute('class', 'add-card-button');
   addCardButton.setAttribute('cardName', cardName);
