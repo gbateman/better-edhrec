@@ -14,7 +14,7 @@ for(let i = 0; i < cards.length; i++) {
   }
 
   const anchor = document.createElement('a');
-  const scryfallLink = 'https://scryfall.com/search?q='+ encodeURI(cardName) + '&unique=cards&as=grid&order=name';
+  const scryfallLink = 'https://scryfall.com/search?q='+ encodeURI('!\"' + cardName + '\"') + '&unique=cards&as=grid&order=name';
   anchor.setAttribute('href', scryfallLink);
   anchor.setAttribute('class', 'scryfall-link');
 
