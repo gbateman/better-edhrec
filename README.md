@@ -1,3 +1,3 @@
-# edhrec-extension
-- we got better layouts
+# better-edhrec
+- we got decklists
 - we got scryfall links
