@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "EDHRec Extension",
+  "name": "Better EDHRec",
   "version": "0.1",
   "content_scripts": [
     {
