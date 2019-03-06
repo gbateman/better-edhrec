@@ -8,7 +8,12 @@ layoutSelect.style = 'margin-right: 2vw; float: right;';
 const cards = document.getElementsByClassName('card');
 
 for(let i = 0; i < cards.length; i++) {
-  let cardName = cards[i].parentElement.parentElement.getElementsByClassName('nwname')[0].innerHTML;
+  const nwNames = cards[i].parentElement.parentElement.getElementsByClassName('nwname')
+  if (nwNames.length == 0) {
+    console.log('Couldn\'t find name')
+    continue;
+  }
+  let cardName = nwNames[0].innerHTML;
   if (cardName.length === 0) { // Commander
     cardName = cards[i].parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.getElementsByClassName('panel-title')[0].innerHTML
   }
@@ -160,4 +165,3 @@ function setDecklist(decklist) {
 
 // First update
 updateDecklist();
-
